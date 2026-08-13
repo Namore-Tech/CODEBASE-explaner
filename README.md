@@ -1,6 +1,6 @@
 CODEBASE 
 AI-powered code explainer that turns confusing code into plain English.
-Paste any code snippet and get a clear, structured explanation — built for students and developers who want to understand code, not just copy it.
+Paste any code snippet and get a clear, structured explanation, built for students and developers who want to understand code, not just copy it.
  Features
    Explains code in any language, line by line
    Powered by Groq's llama-3.3-70b-versatile for fast, high-quality responses
@@ -32,11 +32,11 @@ Getting Started
 Preview
  ![CODEBASE UI](screenshots/ui.png)
 
-🧩 How It Works
-User pastes code into the input box
-PHP backend sends the snippet to the Groq API with a structured prompt
-Groq's LLM returns an explanation, parsed from choices[0]["message"]["content"]
-Explanation is rendered in the UI, optionally saved to MySQL
-📄 License
-MIT — free to use and adapt.
-Built by [Your Name] — Level 200 BIT student, Ghana Communication Technology University.
+How It Works
+ User pastes code into the input box
+ PHP backend sends the snippet to the Groq API with a structured prompt
+ Groq's LLM returns an explanation, parsed from choices[0]["message"]["content"]
+ Explanation is rendered in the UI, optionally saved to MySQL
+License
+ MIT — free to use and adapt.
+ Built by Gbeklui Etornam, Level 200 BIT student, Ghana Communication Technology University.
