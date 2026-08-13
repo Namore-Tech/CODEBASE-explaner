@@ -1,7 +1,7 @@
 <?php
 require_once "db.php";
 
-// 1. Read what the form sent
+
 $code = $_POST["code"] ?? "";
 $language = $_POST["language"] ?? "auto-detect";
 $mode = $_POST["mode"] ?? "technical";
@@ -11,13 +11,13 @@ if (trim($code) === "") {
     exit;
 }
 
-// 2. Build the prompt for the AI
+
 $styleInstruction = ($mode === "simple")
     ? "Explain this in very simple terms, like to a beginner."
     : "Explain this technically, line by line.";
 $prompt = "$styleInstruction\n\nLanguage: $language\n\nCode:\n$code";
 
-// 3. Call the Groq API
+
 $payload = json_encode([
     "model" => "llama-3.3-70b-versatile",
     "messages" => [
@@ -49,13 +49,13 @@ if ($httpCode !== 200) {
 $data = json_decode($response, true);
 $explanation = $data["choices"][0]["message"]["content"] ?? "Could not generate an explanation.";
 
-// 4. Save it to the database
+
 $stmt = $pdo->prepare(
     "INSERT INTO explanations (code, language, explanation, mode) VALUES (?, ?, ?, ?)"
 );
 $stmt->execute([$code, $language, $explanation, $mode]);
 
-// 5. Send the result back to the page as JSON
+
 header("Content-Type: application/json");
 echo json_encode(["explanation" => $explanation]);
 ?>
