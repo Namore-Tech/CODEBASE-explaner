@@ -30,7 +30,7 @@ Getting Started
   Start your local server (e.g. XAMPP) and navigate to the project folder
   Open in browser and paste in some code to try it out
 Preview
-
+ ![CODEBASE UI](screenshots/ui.png)
 
 🧩 How It Works
 User pastes code into the input box
